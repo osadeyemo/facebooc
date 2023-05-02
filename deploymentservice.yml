@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: facebrook-deployment
+  name: facebooc-deployment
   labels:
-    app: facebrook
+    app: facebooc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: facebrook
+      app: facebooc
   template:
     metadata:
       labels:
-        app: facebrook 
+        app: facebooc 
     spec:
       containers:
-      - name: facebrook
-        image: fdjapi10/facebrook:main
+      - name: facebooc
+        image: osadeyemo/facebooc:main
         ports:
         - containerPort: 16000
         
@@ -26,10 +26,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: facebrook-service
+  name: facebooc-service
 spec:
   selector:
-    app: facebrook 
+    app: facebooc
   type: LoadBalancer
   ports:
   - protocol: TCP
